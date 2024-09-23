@@ -5,7 +5,7 @@ A Spring Boot-based web application developed for disaster management. It allows
 ## Features
 
 - **User Types**:
-  - **Admin**: Manages and assigns tasks to volunteers, approves crises, and manages donations and inventory.
+  - **Admin**: Manages and assigns tasks to volunteers, approves crises, manages donations and inventory and can update personal information.
   - **Volunteer**: Logs in, registers, and responds to assigned tasks. Can purchase relief supplies and update personal information.
   - **Anonymous**: Can report crises and donate funds.
   
@@ -14,11 +14,18 @@ A Spring Boot-based web application developed for disaster management. It allows
   - View daily donation and expense charts.
 
 - **Crisis Management**:
-  - Report crises with location, severity, description, and required assistance.
-  
+  - Anonymous users can report crises with location, severity, description, and required assistance.
+  - Admin can approve and change status of the crises.
+  - 
 - **Inventory Management**:
-  - Volunteers can manage relief supplies like food, water, and medical items.
+  - Admin and volunteers can manage relief supplies like food, water, and medical items.
 
+  **Volunteer Management**:
+  - Admin can manage the volunteers like remove a volunteer or assign any task to them or remove any assigned task from them.
+
+  **Assigned Tasks Management**:
+  - Volunteer can see their assigned tasks and after completing, they can mark those tasks as done.
+     
 - **Admin Reports**:
   - Admins can export daily donation, expense, and inventory reports (CSV/Excel).
   - (This feature is under development)
