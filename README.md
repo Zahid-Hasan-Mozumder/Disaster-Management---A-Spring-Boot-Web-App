@@ -22,8 +22,8 @@ A Spring Boot-based web application developed for disaster management. It allows
 
 - **Volunteer Management**:
   - Admin can manage the volunteers like remove a volunteer or assign any task to them or remove any assigned task from them.
-
--  **Assigned Tasks Management**:
+    
+- **Assigned Tasks Management**:
   - Volunteer can see their assigned tasks and after completing, they can mark those tasks as done.
      
 - **Admin Reports**:
