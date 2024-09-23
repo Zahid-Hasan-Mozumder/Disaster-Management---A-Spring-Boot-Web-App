@@ -1,0 +1,64 @@
+body {
+    background-color: #f0f2f5;
+}
+
+.navbar {
+    padding: 15px;
+}
+
+.navbar-brand img {
+    width: 80px;
+    height: auto;
+}
+
+.d-flex .username-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.btn-sm {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+}
+
+.btn-outline-secondary, .btn-outline-danger {
+    border-radius: 30px;
+    padding: 5px 10px;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.card {
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.card i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.btn {
+    padding: 15px;
+    font-size: 1.2rem;
+}

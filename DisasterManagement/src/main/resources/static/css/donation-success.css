@@ -1,0 +1,84 @@
+body {
+          background-color: #f8f9fa;
+          font-family: Arial, sans-serif;
+        }
+
+        .donation-container {
+          margin-top: 50px;
+        }
+
+        .donation-summary {
+          text-align: center;
+          font-size: 2.5rem;
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+
+        .donation-summary small {
+          display: block;
+          font-size: 1.25rem;
+          color: #6c757d;
+        }
+
+        .chart-section {
+          text-align: center;
+        }
+
+        .chart-box {
+          border: 1px solid #ced4da;
+          padding: 15px;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        .chart-box i {
+          font-size: 48px;
+        }
+
+        .donation-form {
+          border: 1px solid #ced4da;
+          padding: 20px;
+          border-radius: 8px;
+        }
+
+        .donation-form h4 {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        .donation-form .form-control {
+          margin-bottom: 15px;
+        }
+
+        .thank-you-section {
+          border: 1px solid #ced4da;
+          padding: 30px;
+          text-align: center;
+          margin-top: 20px;
+          border-radius: 8px;
+        }
+
+        .btn-container {
+          display: flex;
+          justify-content: center;
+          gap: 10px; /* Space between buttons */
+          margin-top: 20px;
+        }
+
+        .btn-custom {
+          background-color: #007bff;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          text-decoration: none;
+        }
+
+        .btn-custom:hover {
+          background-color: #0056b3;
+        }
+
+        .chartContainer {
+          width: 80%;
+          margin: auto;
+        }

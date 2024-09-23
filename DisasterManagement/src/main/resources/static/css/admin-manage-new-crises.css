@@ -1,0 +1,113 @@
+/* General Styling */
+body {
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.navbar-brand img {
+    width: 80px;
+    height: auto;
+}
+
+.d-flex .username-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+    margin-left: 10px;
+}
+
+.d-flex .btn-sm {
+    font-size: 0.85rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    transition: all 0.2s;
+}
+
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-outline-success {
+    color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-outline-success:hover {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.rounded-circle {
+    border: 2px solid #6c757d; /* Slight border around profile picture */
+}
+
+/* Cards Layout */
+ul {
+    padding-left: 0;
+}
+
+.card {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    border: 1px solid #ddd;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.btn {
+    font-size: 0.9rem;
+}

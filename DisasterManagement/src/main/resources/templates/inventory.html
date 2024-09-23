@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/inventory.css}"/>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+            <img th:src="@{/images/Disaster Management.png}" alt="Logo" width="80">
+        </a>
+
+        <!-- Username, Edit, and Logout Section -->
+        <div class="d-flex align-items-center ms-auto">
+            <!-- Profile Picture -->
+            <img th:src="@{${dir} + ${user.image}}" alt="Profile" class="rounded-circle" width="40" height="40">
+
+            <!-- Username -->
+            <span class="ms-3 username-text" th:text="${user.firstName} + ' ' + ${user.lastName}"></span>
+
+            <!-- Edit Button -->
+            <a sec:authorize="hasAuthority('Admin')" th:href="@{/admin/edit-account/}" class="btn btn-outline-secondary btn-sm mx-2">
+                <i class="fas fa-edit"></i> Edit
+            </a>
+            <a sec:authorize="hasAuthority('Volunteer')" th:href="@{/volunteer/edit-account/}" class="btn btn-outline-secondary btn-sm mx-2">
+                <i class="fas fa-edit"></i> Edit
+            </a>
+
+            <!-- Logout Button -->
+            <a th:href="@{/logout}" class="btn btn-outline-danger btn-sm">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Button Section -->
+<div class="container mt-5 text-center">
+    <button class="btn btn-primary me-3"><i class="fas fa-plus-circle"></i> <a href="#" style="color : white; text-decoration : none;">Manage Relief Goods</a></button>
+    <button class="btn btn-primary me-3"><i class="fas fa-plus-circle"></i> <a th:href="@{/inventory/add-purchased-goods/}" style="color : white; text-decoration : none;">Add Purchased Goods</a></button>
+</div>
+
+<!-- Add additional content for managing crises here -->
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

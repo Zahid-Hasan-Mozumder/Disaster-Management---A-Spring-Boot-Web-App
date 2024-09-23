@@ -1,0 +1,57 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+h2 {
+    margin-bottom: 40px;
+}
+
+.volunteers-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.volunteer-card {
+    width: 18%; /* Each card occupies roughly 18% of the width */
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+    .volunteer-card {
+        width: 22%; /* Adjust card width for smaller screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .volunteer-card {
+        width: 30%; /* Adjust card width for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .volunteer-card {
+        width: 45%; /* Adjust card width for mobile screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .volunteer-card {
+        width: 100%; /* Full width for small screens */
+    }
+}

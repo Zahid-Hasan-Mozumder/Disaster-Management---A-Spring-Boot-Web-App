@@ -1,0 +1,100 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.navbar {
+  padding: 20px;
+}
+
+.navbar .logo img {
+  width: 400px;
+  height: auto;
+}
+
+.donation-section, .tracker-section, .recent-crises-section {
+  margin-bottom: 40px;
+}
+
+.donation-summary {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.donation-summary small {
+  display: block;
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.chart-box {
+  border: 1px solid #ced4da;
+  padding: 15px;
+  text-align: center;
+}
+
+.recent-crises {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none; /* Removes bullets */
+  padding: 0;
+  gap: 20px;
+  justify-content: center;
+}
+
+.crisis-card {
+  border: 1px solid #ced4da;
+  text-align: center;
+  padding: 15px;
+  width: 220px;
+  height: 370px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.crisis-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.crisis-card h5 {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.crisis-card p.description {
+  font-size: 0.9rem;
+  color: #6c757d;
+  text-align: center;
+  overflow: hidden;
+  max-height: 75px; /* Ensures the description doesn't exceed a fixed height */
+  margin-bottom: 10px;
+}
+
+.crisis-card .see-more {
+  font-size: 0.8rem;
+  color: #007bff;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.crisis-card .see-more:hover {
+  text-decoration: underline;
+}
+
+.cta-section {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 80px; /* Add more space at the bottom */
+}
+
+.chartContainer {
+  width: 80%;
+  margin: auto;
+}

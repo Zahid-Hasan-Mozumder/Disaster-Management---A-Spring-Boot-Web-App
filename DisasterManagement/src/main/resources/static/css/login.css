@@ -1,0 +1,39 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.login-form {
+    width: 350px;
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form img {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.forgot-password {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+button {
+    margin-top: 20px;
+}
+
+.container {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}

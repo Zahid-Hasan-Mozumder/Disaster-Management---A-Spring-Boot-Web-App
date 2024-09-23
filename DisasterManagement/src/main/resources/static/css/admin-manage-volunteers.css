@@ -1,0 +1,99 @@
+body {
+    background-color: #f0f2f5;
+}
+
+.navbar {
+    padding: 15px;
+}
+
+.navbar-brand img {
+    width: 80px;
+    height: auto;
+}
+
+.d-flex .username-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.btn-sm {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+}
+
+.btn-outline-secondary, .btn-outline-danger {
+    border-radius: 30px;
+    padding: 5px 10px;
+}
+
+
+.list-group-item {
+    padding: 20px;
+}
+
+.btn-sm {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+}
+
+.btn-group .btn {
+    margin-right: 10px;
+}
+
+.list-group-item img {
+    border: 2px solid #ddd;
+}
+
+.profile-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.profile-section h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Details Section */
+.details-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.details-section ul {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.details-section li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.details-section li strong {
+    font-weight: bold;
+}
+
+.d-flex {
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 15px;
+    font-size: 1.1rem;
+}

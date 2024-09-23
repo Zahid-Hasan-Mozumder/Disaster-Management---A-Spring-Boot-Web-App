@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Registration</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/volunteer-registration.css}" />
+</head>
+
+<body>
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <img th:src="@{images/Disaster Management.png}" alt="Logo" class="img-fluid logo">
+    </div>
+    <div class="card p-4 shadow-sm">
+        <h2 class="text-center mb-4">Be A Part Of Our Volunteer Team</h2>
+        <form th:action="@{/register/success}" method="POST" enctype="multipart/form-data" onsubmit="return validatePasswords()">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="first-name" class="form-label">First name</label>
+                    <input name="first-name" type="text" class="form-control" id="first-name" placeholder="First name">
+                </div>
+                <div class="col-md-6">
+                    <label for="last-name" class="form-label">Last name</label>
+                    <input name="last-name" type="text" class="form-control" id="last-name" placeholder="Last name">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input name="email" type="email" class="form-control" id="email" placeholder="Email">
+                </div>
+                <div class="col-md-6">
+                    <label for="profile-photo" class="form-label">Profile Photo</label>
+                    <input name="profile-photo" type="file" class="form-control" id="profile-photo">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input name="address" type="text" class="form-control" id="address" placeholder="Address">
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select name="gender" class="form-select" id="gender">
+                        <option value="male" selected>Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="age" class="form-label">Age</label>
+                    <input name="age" type="number" class="form-control" id="age" placeholder="Age">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="religion" class="form-label">Religion</label>
+                    <input name="religion" type="text" class="form-control" id="religion" placeholder="Religion">
+                </div>
+                <div class="col-md-6">
+                    <label for="nationality" class="form-label">Nationality</label>
+                    <input name="nationality" type="text" class="form-control" id="nationality" placeholder="Nationality">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="profession" class="form-label">Profession</label>
+                    <input name="profession" type="text" class="form-control" id="profession" placeholder="Profession">
+                </div>
+                <div class="col-md-6">
+                    <label for="contact_number" class="form-label">Contact Number</label>
+                    <input name="contact_number" type="text" class="form-control" id="contact_number" placeholder="Contact Number">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="password" class="form-label">Enter Password</label>
+                    <input name="password" type="password" class="form-control" id="password" placeholder="Enter password">
+                </div>
+                <div class="col-md-6">
+                    <label for="confirm-password" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirm-password" placeholder="Confirm password">
+                </div>
+            </div>
+
+            <!-- Error Message Section (Initially Hidden) -->
+            <div class="form-group">
+                <span class="error-message" id="error-message"></span>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript for Password Validation -->
+<script>
+    function validatePasswords() {
+        const password = document.getElementById("password").value.trim();
+        const confirmPassword = document.getElementById("confirm-password").value.trim();
+        const errorMessage = document.getElementById("error-message");
+
+        // Check if the password or confirm password is empty
+        if (password === "" || confirmPassword === "") {
+            errorMessage.innerText = "Password fields cannot be empty."; // Set appropriate message
+            errorMessage.style.display = "block"; // Show error message
+            return false; // Prevent form submission
+        }
+
+        // Checking password mismatch
+        if (password !== confirmPassword) {
+            errorMessage.innerText = "Passwords do not match."; // Set appropriate message
+            errorMessage.style.display = "block"; // Show error message
+            return false; // Prevent form submission
+        }
+
+        errorMessage.style.display = "none"; // Hide error message
+        return true; // Allow form submission
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/donation.css}" />
+
+</head>
+<body>
+
+<!-- Main Donation Container -->
+<div class="container donation-container">
+    <div class="row">
+        <!-- Left Side: Donation Summary and Trackers -->
+        <div class="col-md-6">
+            <!-- Total Donation Summary -->
+            <div class="donation-summary">
+                <span th:text="${totalDonation}" /> <br>
+                <small>Total Amount of Donation</small>
+            </div>
+
+            <!-- Donation Tracker -->
+            <div class="chart-section">
+                <div class="chart-box">
+
+                    <!-- Container for the chart -->
+                    <div class="chartContainer">
+                        <canvas id="donationChart"></canvas>
+                    </div>
+
+                    <p>Daily Donations Tracker</p>
+                </div>
+
+                <!-- Expense Tracker -->
+                <div class="chart-box">
+
+                    <!-- Container for the chart -->
+                    <div class="chartContainer">
+                        <canvas id="expenseChart"></canvas>
+                    </div>
+
+                    <p>Daily Expenses Tracker</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Donation Form -->
+        <div class="col-md-6">
+            <div class="donation-form">
+                <h4>Donate to become a part of this charity</h4>
+                <!-- Donation Form -->
+                <form th:action="@{/donation/success}" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input name="name" type="text" class="form-control" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input name="email" type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Contact Number</label>
+                        <input name="contact_number" type="text" class="form-control" id="contact" placeholder="Enter your contact number">
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input name="amount" type="number" class="form-control" id="amount" placeholder="Enter donation amount">
+                    </div>
+                    <button type="submit" class="btn btn-donate">Donate</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Include Chart.js from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script th:inline="javascript">
+
+    // dynamically passed spring array storing in js as array
+    var labelsArray = [[${dates}]];              // ['Date 1', 'Date 2', 'Date 3', 'Date 4', 'Date 5', 'Date 6', 'Date 7', 'Date 8']
+    var valuesArray = [[${totalAmounts}]];       // [10, 24, 36, 15, 40, 22, 18, 33];
+
+    // Limit to a maximum of 7 categories, but plot lesser if present
+    var mx = 7;
+    var limitedLabelsArray = labelsArray.slice(0, mx);
+    var limitedValuesArray = valuesArray.slice(0, mx);
+
+    // Select the canvas element
+    var ctx = document.getElementById('donationChart').getContext('2d');
+
+    // Create the bar chart
+    var donationChart = new Chart(ctx, {
+        type: 'bar', // Type of chart
+        data: {
+            labels: limitedLabelsArray, // X-axis labels
+            datasets: [{
+                label: 'Amount of donations (per day)', // Chart label
+                data: limitedValuesArray, // Data values
+                backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                ],
+                borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                ],
+                borderWidth: 1 // Thickness of the border
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true // Start y-axis from 0
+                }
+            }
+        }
+    });
+</script>
+
+<script th:inline="javascript">
+
+    // dynamically passed spring array storing in js as array
+    var labelsArray = [[${purchaseDates}]];
+    var valuesArray = [[${totalExpense}]];
+
+    // Limit to a maximum of 7 categories, but plot lesser if present
+    var mx = 7;
+    var limitedLabelsArray = labelsArray.slice(0, mx);
+    var limitedValuesArray = valuesArray.slice(0, mx);
+
+    // Select the canvas element
+    var ctx = document.getElementById('expenseChart').getContext('2d');
+
+    // Create the bar chart
+    var expenseChart = new Chart(ctx, {
+        type: 'bar', // Type of chart
+        data: {
+            labels: limitedLabelsArray, // X-axis labels
+            datasets: [{
+                label: 'Amount of donations (per day)', // Chart label
+                data: limitedValuesArray, // Data values
+                backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                ],
+                borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                ],
+                borderWidth: 1 // Thickness of the border
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true // Start y-axis from 0
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
