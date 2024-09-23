@@ -57,3 +57,22 @@ A Spring Boot-based web application developed for disaster management. It allows
 
    - Open your browser and go to http://localhost:8080.
 
+4. **Login**
+
+   - Initiatial login for admin is
+   ```
+   Email: jahidhasanmozumder@gmail.com
+   Password: test123
+   ```
+   - Initial login for volunteer is
+   ```
+   Email: Any Registered Volunteer's Email
+   Password: test123
+   ```
+
+5. **Extras**
+
+   - The MySQL files are attached here for your manual use.
+   - You can open your MySQL Workbench and
+   - Run all the scripts (For get a working understanding of the web app with preloaded data) or
+   - Run all the scripts except the 8th script (For get a initial start of the web app to populate it later with your own inserted data).
