@@ -16,7 +16,7 @@ A Spring Boot-based web application developed for disaster management. It allows
 - **Crisis Management**:
   - Anonymous users can report crises with location, severity, description, and required assistance.
   - Admin can approve and change status of the crises.
-  - 
+ 
 - **Inventory Management**:
   - Admin and volunteers can manage relief supplies like food, water, and medical items.
 
